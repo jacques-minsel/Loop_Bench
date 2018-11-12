@@ -1,0 +1,25 @@
+#################################################################
+#################################################################
+##
+## Author: MINSELEBE JACQUES
+## Edited by:
+## Description: Loop curl http/https 
+##
+## Date: 12/11/2018
+## 
+#################################################################
+#################################################################
+#!/bin/bash
+echo "hello team , this script is about to do a charge test with curl"
+read -p "please give me your DNS:" my_url
+read -p "Do you want reach this DNS in HTTPS ? (yes/no): " choice1
+
+if [ "$choice1" = "yes" ] ; then
+	{
+		while true; do curl -o -k /dev/null "https://"$my_url"/"; sleep 3;done
+	}
+		else
+	{
+		while true; do curl -o -k /dev/null "http://"$my_url"/"; sleep 3;done
+	}
+fi 
